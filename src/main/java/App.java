@@ -9,7 +9,15 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
 
 public class App {
-    public static void main(String[] args) { //type “psvm + tab” to autocreate this
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
+    public static void main(String[] args) {
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
         //SQUAD squad1 = new SQUAD();
@@ -33,6 +41,12 @@ public class App {
             return new ModelAndView(model, "heroForm.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/home", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            res.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
         //task: process new Hero form
         post("/tasks", (req, res) -> { //URL to make new task on POST route
             Map<String, Object> model = new HashMap<>();
@@ -48,7 +62,7 @@ public class App {
 
             SQUAD newSquad = new SQUAD(yourSquad,newHero);
 
-            res.redirect("/");
+            res.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
 
