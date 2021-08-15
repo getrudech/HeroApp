@@ -8,17 +8,18 @@
             <p>Hero Special Power : {{specialPower}}</p>
             <p>Hero Weakness : {{weakness}}</p>
             <hr>
-        {{/each}}
 
-    {{else}}
-        <h1>Add heros to view them here</h1>
-        <p>NO HEROS HAVE JOINED US YET !!</p>
-    {{/if}}
+            {{#each squads}}
+                <p>Squad name : {{squadName}}</p>
+                {{#each heros}}
+                    <li> Hero name : {{name}}</li>
+                {{/each}}
+            {{/each}}
 
-    <a href="/form">Add a hero </a>
+        {{else}}
+            <h1>Add heros to view them here</h1>
+            <p>NO HEROS HAVE JOINED US YET !!</p>
+        {{/if}}
 
+        <a href="/form">Add a hero </a>
 
-    <hr>
-{{/partial}}
-
-{{> layout.hbs}}
