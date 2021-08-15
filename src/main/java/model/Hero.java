@@ -14,8 +14,8 @@ public class Hero {
 
     private static ArrayList<Hero> instances = new ArrayList<>();
 
-    public Hero(String name, Integer age, String specialPower, String weakness){
-    public Hero(String name, Integer age, String specialPower, String weakness, String yourSquad){
+    public Hero(String name, Integer age, String specialPower, String weakness) {
+    public Hero(String name, Integer age, String specialPower, String weakness, String yourSquad) {
             this.name = name;
             this.specialPower = specialPower;
             this.weakness = weakness;
@@ -24,10 +24,12 @@ public class Hero {
             instances.add(this);
         }
 
-        public String getYourSquad() {
+        public String getYourSquad () {
             return yourSquad;
         }
 
-        public Integer getAge() {
+        public Integer getAge () {
             return age;
         }
+    }
+}
