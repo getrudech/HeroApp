@@ -6,6 +6,6 @@ public class App {
         staticFileLocation("/public");
 
 
-        showMessageDialog(null,"This is an alert!!");
+        showMessageDialog(null, "This is an alert!!");
 
-    }
+    }}
