@@ -27,20 +27,19 @@ public class SQUAD {
             if (instances.get(i).squadName.equals(squadName)) {//squad1
                 check = true;
                 instance = i;
+            }
 
-                for (int x = 0; x < instances.get(i).heros.size(); x++) {
+            for (int x = 0; x < instances.get(i).heros.size(); x++) {
 
-                    if (instances.get(i).heros.get(x).getName().equals(hero.getName())) {
+                if (instances.get(i).heros.get(x).getName().equals(hero.getName())) {
 
-                        showMessageDialog(null, "This Hero is in another squad");
-                        checkHero = true;
-                        break;
-                    }
+                    showMessageDialog(null, "This Hero is in another squad");
+                    checkHero = true;
                 }
-                break;
             }
         }
-        if (!check){
+
+        if (!check && !checkHero){
             instances.add(this);
             instances.get(instances.size()-1).heros.add(hero);
             showMessageDialog(null, "The Squad has been created with the new hero");
