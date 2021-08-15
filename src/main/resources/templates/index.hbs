@@ -1,17 +1,17 @@
 {{#partial "content"}}
-    <h1>HERE ARE THE LIST OF OUR HEROES</h1>
+    <h1>HERE ARE THE HEROS WE HAVE</h1>
 
     {{#if heros}}
         {{# each heros}}
             <p>Hero name : {{name}}</p>
             <p>Hero age : {{age}}</p>
             <p>Hero Special Power : {{specialPower}}</p>
-            <p>Hero Weakness : {{Weakness}}</p>
+            <p>Hero Weakness : {{weakness}}</p>
             <hr>
         {{/each}}
 
     {{else}}
-        <h1>Add heroes here</h1>
+        <h1>Add heros to view them here</h1>
         <p>NO HEROS HAVE JOINED US YET !!</p>
     {{/if}}
 
@@ -19,8 +19,3 @@
 
 
     <hr>
-
-
-{{/partial}}
-
-{{> layout.hbs}}
