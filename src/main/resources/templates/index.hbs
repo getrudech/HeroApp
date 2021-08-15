@@ -1,25 +1,26 @@
 {{#partial "content"}}
     <h1>HERE ARE THE HEROS WE HAVE</h1>
 
-    {{#if heros}}
-        {{# each heros}}
-            <p>Hero name : {{name}}</p>
-            <p>Hero age : {{age}}</p>
-            <p>Hero Special Power : {{specialPower}}</p>
-            <p>Hero Weakness : {{weakness}}</p>
-            <hr>
-
-            {{#each squads}}
-                <p>Squad name : {{squadName}}</p>
-                {{#each heros}}
-                    <li> Hero name : {{name}}</li>
-                {{/each}}
+    {{#if squads}}
+        {{#each squads}}
+            <p>Squad name : {{squadName}}</p>
+            {{#each heros}}
+                <li> Hero name : {{name}}</li>
             {{/each}}
+        {{/each}}
 
-        {{else}}
-            <h1>Add heros to view them here</h1>
-            <p>NO HEROS HAVE JOINED US YET !!</p>
-        {{/if}}
+        <h1>Add heros to view them here</h1>
 
-        <a href="/form">Add a hero </a>
+    {{else}}
+        <p>NO HEROS HAVE JOINED US YET !!</p>
 
+    {{/if}}
+
+    <a href="/form">Add a hero </a>
+
+    <hr>
+
+
+{{/partial}}
+
+{{> layout.hbs}}
