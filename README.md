@@ -5,7 +5,7 @@ Description
 
 This is a Java App that allows users to add a hero to multiple squads. A hero can be in only one squad and Squad names should have different string characters.
 Clone or download and unzip the repository from github,[]
-If you have git Use this command git clone https://github.com/mkkieru/hero-app.git to clone the project.
+If you have git Use this command git clone https://github.com/getrudech/HeroApp.git to clone the project.
 
 Technologies Used
 Spark Java
